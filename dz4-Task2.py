@@ -11,13 +11,12 @@ def numberList(n,listX):
             numberList(n//i,listX) 
             break
 
-# Выводим список множителей
-def printList(n):
-    listNatur=[]
-    numberList(n,listNatur)
-    print(f'Состав простых множителей числа : \n{listNatur}')
 
+# Выводим список множителей
 
 numNatur=int(input('Введите натуральное число -> '))
+listNatur=[]
 
-printList(numNatur)
+numberList(numNatur,listNatur)
+
+print(f'Состав простых множителей числа : \n{listNatur}')
