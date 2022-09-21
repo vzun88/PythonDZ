@@ -20,7 +20,7 @@ def board():
         if i==5: print(f'| {hodSave[0]} | {hodSave[1]} | {hodSave[2]} |')
 
 
-# Заполняем матрицк hodSave ходами игроков (X или 0)
+# Заполняем матрицу hodSave ходами игроков (X или 0)
 def schet(h):
     while True:
         if h in [0,1,2,3,4,5,6,7,8]:
