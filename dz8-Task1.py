@@ -3,12 +3,12 @@
 # Input: 5 -> 1 3 3 3 4
 # Output: 1 3 3 3 1
 
-point=[3,5,2,3,1]
+point=[3,5,2,3,2]
 
-def pointMin(list):
-    for i in range(len(list)):
-        if list[i]>3: list[i]=1
-    s=' '.join(str(i) for i in list)
-    print(s)
+def pointMin(lis):
+    maximus = max(lis)
+    minimus= min(lis)
+    lisPoint=list(map((lambda x: minimus if x==maximus else x), lis))
+    print(' '.join(map(str,lisPoint)))
 
 pointMin(point)
