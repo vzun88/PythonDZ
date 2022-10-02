@@ -3,10 +3,10 @@
 # Input: 2 -> 3 4
 # Output: 4 3
 
-# Проверка строки (по пробелам) на количество введённых чисел
+# Считаем (по пробелам) количество введённых чисел
 def f(strN,a=0,count=0):
-    if strN.find(' ',a,len(strNum))!=-1:
-        a=strN.find(' ',a,len(strNum))
+    if strN.find(' ',a,len(strN))!=-1:
+        a=strN.find(' ',a,len(strN))
         return f(strN,a+1,count+1)
     else:
         return count+1
@@ -19,14 +19,16 @@ def fReverse(strN,x=-1):
         print(strN[x],end='')
         return fReverse(strN,x-1)
 
+# Проверка на соответствие количества введенных чисел числу n (через рекурсию)
+def valid(num):
+    strN=input(f'Введите числа в количестве {num} через 1 пробел -> ')
+    k=f(strN)
+    if k==num: return strN
+    else:
+        return valid(num)
 
+# Сборка
 n=int(input('Введите количество элементов в последовательности -> '))
 
-# Проверка на количество введенных чисел
-while True:
-    strNum=input('Введите числа через 1 пробел -> ')
-    k=f(strNum)
-    if k==n: break
-
-
-fReverse
+strNum=valid(n)
+fReverse(strNum)
